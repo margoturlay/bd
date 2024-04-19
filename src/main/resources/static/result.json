@@ -1,0 +1,84 @@
+{
+  "id": 2,
+  "name": "Lollipub",
+  "phone": "+375292249121",
+  "address": "st. Bank, 31",
+  "info": "some info for no reason",
+  "dishes": [
+    {
+      "id": 1,
+      "name": "Pasta",
+      "cost": 14,
+      "menuCategory": {
+        "id": 7,
+        "name": "Italian"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Hamon",
+      "cost": 9,
+      "menuCategory": {
+        "id": 5,
+        "name": "Spanish"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Taco",
+      "cost": 12,
+      "menuCategory": {
+        "id": 8,
+        "name": "Mexican"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Ramen",
+      "cost": 17,
+      "menuCategory": {
+        "id": 9,
+        "name": "Japanese"
+      }
+    },
+    {
+      "id": 5,
+      "name": "string",
+      "cost": 1,
+      "menuCategory": {
+        "id": 5,
+        "name": "Spanish"
+      }
+    }
+  ],
+  "menuCategories": [
+    {
+      "id": 5,
+      "name": "Spanish"
+    },
+    {
+      "id": 8,
+      "name": "Mexican"
+    },
+    {
+      "id": 9,
+      "name": "Japanese"
+    }
+  ],
+  "restaurantTables": [
+    {
+      "id": 1,
+      "tableNumber": 1,
+      "seatsNumber": 6,
+      "isFree": true,
+      "reservations": []
+    },
+    {
+      "id": 2,
+      "tableNumber": 2,
+      "seatsNumber": 3,
+      "isFree": true,
+      "reservations": []
+    }
+  ]
+}

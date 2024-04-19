@@ -1,0 +1,303 @@
+### ACTUATOR
+GET http://localhost:8080/actuator/health
+###
+GET http://localhost:8080/actuator/env
+###
+GET http://localhost:8080/actuator/info
+###
+GET http://localhost:8080/actuator/beans
+###
+GET http://localhost:8080/actuator/conditions
+###
+GET http://localhost:8080/actuator/configprops
+###
+GET http://localhost:8080/actuator/heapdump
+###
+GET http://localhost:8080/actuator/loggers
+###
+GET http://localhost:8080/actuator/mappings
+###
+GET http://localhost:8080/actuator/metrics
+###
+GET http://localhost:8080/actuator/threaddump
+
+
+
+
+
+
+### add privilege
+POST http://localhost:8080/privilege/add
+Content-Type: application/json
+
+{
+  "name": "TAKE_ORDER"
+}
+
+### get privileges
+GET http://localhost:8080/privilege/get/all
+
+### get privilege
+GET http://localhost:8080/privilege/get/1
+
+### update privilege
+PUT http://localhost:8080/privilege/update/1
+Content-Type: application/json
+
+{
+  "name": "TAKE_ORDER"
+}
+
+### delete privilege
+DELETE http://localhost:8080/privilege/delete/1
+
+
+
+
+
+
+### add role
+POST http://localhost:8080/roles/add
+Content-Type: application/json
+
+{
+  "name": "WAITER",
+  "rolePrivileges": []
+}
+
+### get role
+GET http://localhost:8080/roles/get/1
+
+### get roles
+GET http://localhost:8080/roles/get/all
+
+### update role
+PUT http://localhost:8080/roles/update/2
+Content-Type: application/json
+
+{
+  "name": "GUEST",
+  "rolePrivileges": [1, 2]
+}
+
+### delete role
+DELETE http://localhost:8080/roles/delete/4
+
+
+
+
+### add user
+POST http://localhost:8080/users/add
+Content-Type: application/json
+
+{
+"name": "user",
+"mail": "user",
+"password": "userpassword",
+  "roles": [5]
+}
+
+### get user
+GET http://localhost:8080/users/get/6
+
+### get all users
+GET http://localhost:8080/users/get/all
+
+### update user
+PUT http://localhost:8080/users/update/14
+Content-Type: application/json
+
+{
+  "name": "admin",
+  "mail": "admin",
+  "password": "crazzy14",
+  "roles": [1]
+}
+
+### delete user
+DELETE http://localhost:8080/users/delete/13
+
+### login user
+POST  http://localhost:8080/users/login
+Content-Type: application/json
+
+{
+  "mail": "admin"
+}
+
+
+
+
+### add restaurant
+POST http://localhost:8080/restaurants/add
+Content-Type: application/json
+
+{
+  "name": "Lollipub",
+  "phone": "+375292249121",
+  "address": "st. Bank, 31",
+  "info": "some info for no reason"
+}
+
+### get restaurant
+GET http://localhost:8080/restaurants/get/2
+
+### get all restaurants
+GET http://localhost:8080/restaurants/get/all
+
+### update restaurant
+PUT http://localhost:8080/restaurants/update/1
+Content-Type: application/json
+
+{
+  "name": "Roy Kent",
+  "phone": "+375292249120",
+  "address": "st. Anders, 33",
+  "info": "some info for update 2"
+}
+
+### delete restaurant
+DELETE http://localhost:8080/restaurants/delete/1
+
+
+
+
+
+
+### add menu category
+POST http://localhost:8080/menu_categories/add
+Content-Type: application/json
+
+{
+  "name": "Japanese",
+  "restaurant": 2
+}
+
+### get menu category
+GET http://localhost:8080/menu_categories/get/3
+
+### get all menu categories
+GET http://localhost:8080/menu_categories/get/all
+
+### update menu category
+PUT http://localhost:8080/menu_categories/update/1
+Content-Type: application/json
+
+{
+  "name": "Roy Kent Spanish 2"
+}
+
+### delete menu category
+DELETE http://localhost:8080/menu_categories/delete/6
+
+
+
+
+
+
+### add dish
+POST http://localhost:8080/dishes/add
+Content-Type: application/json
+
+{
+  "name": "Ramen",
+  "cost": 17,
+  "restaurant": 2,
+  "menuCategory": 9
+}
+
+### get dish
+GET http://localhost:8080/dishes/get/1
+
+### get all dishes
+GET http://localhost:8080/dishes/get/all
+
+### update dish
+PUT http://localhost:8080/dishes/update/1
+Content-Type: application/json
+
+{
+  "name": "Roy Kent cocktail",
+  "cost": 12,
+  "restaurant": 2,
+  "menuCategory": 3
+}
+
+### delete dish
+DELETE http://localhost:8080/dishes/delete/5
+
+
+
+
+
+
+### add order
+POST http://localhost:8080/orders/add
+Content-Type: application/json
+
+{
+  "user": 6,
+  "status": 1,
+  "dishes": [1, 2]
+}
+
+### get order
+GET http://localhost:8080/orders/get/2
+
+### get all order
+GET http://localhost:8080/orders/get/all
+
+### update order
+PUT http://localhost:8080/orders/update/2
+Content-Type: application/json
+
+{
+  "user": 6,
+  "status": 2,
+  "dishes": [1, 2]
+}
+
+### update order status
+PUT http://localhost:8080/orders/update/status/2
+Content-Type: application/json
+
+{
+  "status": 2
+}
+
+### delete orders
+DELETE http://localhost:8080/orders/delete/1
+
+
+
+
+
+
+
+### add payment
+POST http://localhost:8080/payments/add
+Content-Type: application/json
+
+{
+  "cost": 24.7,
+  "order": 2
+}
+
+### get payment
+GET http://localhost:8080/payments/get/1
+
+### get all payments
+GET http://localhost:8080/payments/get/all
+
+### update payment
+PUT http://localhost:8080/payments/add
+Content-Type: application/json
+
+{
+  "cost": 24.7,
+  "order": 2
+}
+
+### delete payment
+DELETE http://localhost:8080/payments/delete/1
+
